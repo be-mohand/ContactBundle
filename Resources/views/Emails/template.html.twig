@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail</title>
+    <style type="text/css">
+        p {
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    
+<table cellspacing="0" border="0" style="background-color: #c5c5c5; font-family: arial, sans-serif; font-size: 14px;" cellpadding="0" width="100%">
+    <tr>
+        <td align="center">
+            <table cellspacing="0" border="0" align="center" style="background: #fff; border-bottom: 1px solid #c5c5c5; border-top: 1px solid #c5c5c5;" cellpadding="0" width="640">
+                <tr>
+                        <td height="20" width="640"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0" width="640">
+                            <thead style="border-bottom: 1px solid #ccc;">
+                                <tr>
+                                    <td width="30"></td>
+                                    <td align="center" valign="middle" width="580" height="50" style="background: #ccc">
+                                        <p>
+                                            Message envoyé par <strong>{{ enquiry.name }}</strong> à {{ "now" | date("d/m/Y à Hhi") }}.
+                                        </p>
+                                    </td>
+                                    <td width="30"></td>
+                                </tr>
+                                <tr>
+                                    <td width="30"></td>
+                                    <td align="left" valign="middle" width="580">
+                                        <p>
+                                            <strong>Email:</strong> {{ enquiry.email }}
+                                        </p>
+                                    </td>
+                                    <td width="30"></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </td>
+                </tr>
+                <table cellspacing="0" border="0" align="center" style="background: #fff;" cellpadding="0" width="640">
+                    <tbody>
+                        <tr>
+                            <td width="30"></td>
+                            <td align="left" valign="middle" width="580">
+                                <p> <strong>Message:</strong></p>
+                                <p>{{ enquiry.body }}</p>
+                            </td>
+                            <td width="30"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

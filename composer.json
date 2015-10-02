@@ -1,0 +1,28 @@
+{
+    "name" : "n-sens/ContactBundle",
+    "description" : "Contact form Bundle",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "N-SENS",
+        "email" : "contact@n-sens.com",
+        "homepage": "http://www.n-sens.com"
+    }],
+    "keywords" : [
+        "contact form bundle"
+    ],
+    "require" : {
+            "php" : ">=5.3.0",
+            "symfony/framework-bundle" : ">=2.5.6",
+            "twig/twig" : "*",
+            "doctrine/doctrine-bundle" : "*",
+            "symfony/http-foundation": ">=2.1",
+            "symfony/config": ">=2.1",
+            "hipaway-travel/mandrill-bundle": "dev-master"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "NS\\ContactBundle" : ""
+        }
+    },
+    "target-dir" : "NS/ContactBundle",
+}

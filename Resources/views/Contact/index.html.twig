@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Contactez-nous!{% endblock %}
+
+{% block body %}
+    <h1 class="red-heading">Nous contacter</h1>
+    <div class="col-md-6 col-md-offset-3 form-container contact-cn" style="padding-bottom:50px;padding-top:35px;">
+       
+    	{% for flashMessage in app.session.flashbag.get('notice') %}
+    	    <div class="alert yellow-alert">
+    			<a href="#" onclick="$(this).parent().fadeOut(); return false;" class="close">x</a>
+    	        <p>{{ flashMessage }}</p>
+    	    </div>
+    	{% endfor %}
+
+    	<form action="{{ path('ns_contact') }}" method="post" {{ form_enctype(form) }}>
+    	    {{ form_errors(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.body) }}
+
+            {{ form_rest(form) }}
+    	    <input class="btn btn-red" type="submit" value="Envoyer" />
+    	</form>
+    </div>
+{% endblock body %}
