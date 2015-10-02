@@ -2,11 +2,17 @@
     "name" : "n-sens/contact-bundle",
     "description" : "Contact form Bundle",
     "type" : "symfony-bundle",
-    "authors" : [{
-        "name" : "N-SENS",
-        "email" : "contact@n-sens.com",
-        "homepage": "http://www.n-sens.com"
-    }],
+    "authors" : [
+        {
+            "name" : "N-SENS",
+            "email" : "contact@n-sens.com",
+            "homepage": "http://www.n-sens.com"
+        },
+        {
+            "name" : "Mohand Bencherif",
+            "email" : "mohand@n-sens.com",
+        }
+    ],
     "keywords" : [
         "contact form bundle"
     ],
