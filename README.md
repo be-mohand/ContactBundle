@@ -32,7 +32,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-
+            new Hip\MandrillBundle\HipMandrillBundle(),
             new NS\ContactBundle\NSContactBundle(),
         );
 
@@ -53,6 +53,14 @@ Step 3: Configuration
 ```yaml
 # config.yml
 
+# Mandrill configuration
+hip_mandrill:
+    api_key: xxxxxxxxxxx
+    disable_delivery: false
+    default:
+        sender: Application Name
+        sender_name: your Email
+
 # NSContactBundle Configuration
 ns_contact:
     subject: Message de contact
@@ -60,4 +68,14 @@ ns_contact:
     sender_name: Application
     template: NSContactBundle:Emails:template.html.twig
     disable_delivery: false
+    success_url: ns_contact
+```
+
+```yaml
+# routing.yml
+
+# NSContactBundle Routes
+ns_contact:
+    resource: "@NSContactBundle/Resources/config/routing.yml"
+    prefix:   /
 ```
