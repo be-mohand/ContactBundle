@@ -22,10 +22,10 @@
             "twig/twig" : "*",
             "doctrine/doctrine-bundle" : "*",
             "symfony/http-foundation": ">=2.1",
-            "symfony/config": ">=2.1"
+            "symfony/config": ">=2.1",
+            "hipaway-travel/mandrill-bundle": "1.0.9"
     },
     "require-dev": {
-        "hipaway-travel/mandrill-bundle": "dev-master"
     },
     "autoload" : {
         "psr-0" : {
