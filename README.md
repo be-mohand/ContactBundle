@@ -1,6 +1,19 @@
 Installation
 ============
 
+Prerequisites
+-------------
+
+Before you're able to use this bundle you must sign up with Mandrill.
+
+http://mandrill.com
+
+Mandrill is a great way to send your transactional emails and provides detailed advances reports.
+
+Mandrill is free for limited number of email per day, please read through pricing section on the website for more information:
+
+http://mandrill.com/pricing/
+
 Step 1: Download the Bundle
 ---------------------------
 
