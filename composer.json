@@ -1,5 +1,5 @@
 {
-    "name" : "n-sens/ContactBundle",
+    "name" : "n-sens/contact-bundle",
     "description" : "Contact form Bundle",
     "type" : "symfony-bundle",
     "authors" : [{
