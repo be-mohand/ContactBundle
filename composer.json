@@ -2,6 +2,7 @@
     "name" : "n-sens/contact-bundle",
     "description" : "Contact form Bundle",
     "type" : "symfony-bundle",
+    "license": "MIT",
     "authors" : [
         {
             "name" : "N-SENS",
