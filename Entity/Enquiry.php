@@ -9,12 +9,34 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Enquiry
 {
+    /**
+     * @Assert\NotBlank(message="Le nom ne peut pas être vide", groups = {"new"})
+     * @var
+     */
     protected $name;
 
+    /**
+     * @var
+     * @Assert\Email(message="L'email n'est pas conforme", groups={"new"})
+     */
     protected $email;
 
+    /**
+     * @var
+     */
     protected $subject;
 
+    /**
+     * @var
+     * @Assert\NotBlank(message="Le contenu ne doit pas être vide", groups = {"new"})
+     * @Assert\Length(
+     *     min="3",
+     *     max="50",
+     *     minMessage="Le contenu doit avoir au minimum {{ limit }} caractères",
+     *     maxMessage="Le contenu peut avoir au maximum {{ limit }} caractères",
+     *     groups={"new"}
+     * )
+     */
     protected $body;
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)

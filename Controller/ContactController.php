@@ -3,7 +3,6 @@
 namespace NS\ContactBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Hip\MandrillBundle\Message;
 use Hip\MandrillBundle\Dispatcher;
 
 use NS\ContactBundle\Entity\Enquiry;
@@ -16,24 +15,24 @@ class ContactController extends Controller
     	$enquiry = new Enquiry();
 		$form = $this->createForm(new EnquiryType(), $enquiry);
 
-		$request = $this->getRequest();
+		$request = $this->get('request');
 		if ($request->getMethod() == 'POST') {
-		    $form->bind($request);
+		    $form->handleRequest($request);
 
 		    if ($form->isValid()) {
 
-		    	$dispatcher = $this->get('hip_mandrill.dispatcher');
+				$message = \Swift_Message::newInstance();
 
-        		$message = new Message();
         		if($this->container->getParameter('ns_contact.subject'))
         			$message->setSubject($this->container->getParameter('ns_contact.subject'));
         		else
         			$message->setSubject('Formulaire de contact');
 
+				$from_name = null;
         		if($this->container->getParameter('ns_contact.sender_name'))
-        			$message->setFromName($this->container->getParameter('ns_contact.sender_name'));
+        			$from_name = $this->container->getParameter('ns_contact.sender_name');
 
-       			$message->setFromEmail($this->container->getParameter('ns_contact.emailto'));        		
+       			$message->setFrom($this->container->getParameter('ns_contact.emailto'), $from_name);
         		$message->addTo($this->container->getParameter('ns_contact.emailto'));
 
         		if($this->container->getParameter('ns_contact.template'))
@@ -41,9 +40,10 @@ class ContactController extends Controller
         		else
         			$view = 'NSContactBundle:Emails:template.html.twig';
 
-        		$message->setHtml($this->renderView($view, array('enquiry' => $enquiry)));
-				
-				$dispatcher->send($message);
+        		$message->setBody($this->renderView($view, array('enquiry' => $enquiry)));
+
+				$this->get('mailer')->send($message);
+
 
 		        return $this->redirect($this->generateUrl($this->container->getParameter('ns_contact.success_url')));
 		    }

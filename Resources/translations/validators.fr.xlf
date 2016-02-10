@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en-US" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="bc1e879370a29f0b6e694f139c3bc746" resname="Veuillez saisir une adresse email valide!">
+        <source>Veuillez saisir une adresse email valide!</source>
+        <target>Veuillez saisir une adresse email valide!</target>
+      </trans-unit>
+      <trans-unit id="145cdedcc9cb3c5c563f16ebcfe64a8d" resname="Your message must be at least {{ limit }} characters long">
+        <source>Your message must be at least {{ limit }} characters long</source>
+        <target>Your message must be at least {{ limit }} characters long</target>
+      </trans-unit>
+      <trans-unit id="2bb0ef3ccafcb21eb07a307548b7458d" resname="enquiry.email.is_email">
+        <source>enquiry.email.is_email</source>
+        <target>enquiry.email.is_email</target>
+      </trans-unit>
+      <trans-unit id="c56059f3043413647cb4da37d0d83344" resname="enquiry.name.not_blank">
+        <source>enquiry.name.not_blank</source>
+        <target>enquiry.name.not_blank</target>
+      </trans-unit>
+      <trans-unit id="b3eab156cbe16ee0f27fc869cd7b74a0" resname="enquiry.subject.length_max">
+        <source>enquiry.subject.length_max</source>
+        <target>enquiry.subject.length_max</target>
+      </trans-unit>
+      <trans-unit id="b3053c306c91534b283a11b6e9bd6347" resname="enquiry.subject.length_min">
+        <source>enquiry.subject.length_min</source>
+        <target>enquiry.subject.length_min</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
