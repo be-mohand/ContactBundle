@@ -35,6 +35,8 @@ class ContactController extends Controller
        			$message->setFrom($this->container->getParameter('ns_contact.emailto'), $from_name);
         		$message->addTo($this->container->getParameter('ns_contact.emailto'));
 
+                $message->setContentType("text/html");
+
         		if($this->container->getParameter('ns_contact.template'))
         			$view = $this->container->getParameter('ns_contact.template');
         		else
