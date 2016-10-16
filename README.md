@@ -1,19 +1,6 @@
 Installation
 ============
 
-Prerequisites
--------------
-
-Before you're able to use this bundle you must sign up with Mandrill.
-
-http://mandrill.com
-
-Mandrill is a great way to send your transactional emails and provides detailed advances reports.
-
-Mandrill is free for limited number of email per day, please read through pricing section on the website for more information:
-
-http://mandrill.com/pricing/
-
 Step 1: Download the Bundle
 ---------------------------
 
@@ -45,7 +32,6 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-            new Hip\MandrillBundle\HipMandrillBundle(),
             new NS\ContactBundle\NSContactBundle(),
         );
 
@@ -65,14 +51,6 @@ Step 3: Configuration
 
 ```yaml
 # config.yml
-
-# Mandrill configuration
-hip_mandrill:
-    api_key: xxxxxxxxxxx
-    disable_delivery: false
-    default:
-        sender: Application Name
-        sender_name: your Email
 
 # NSContactBundle Configuration
 ns_contact:
